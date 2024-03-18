@@ -20,6 +20,7 @@ export const TaskTable = ({ tasks, updateTask, deleteTask }) => {
           onClick={() => {
             toggleStatus(x);
           }}
+          className="small-button"
         >
           Mark Incomplete
         </Button>{" "}
@@ -32,6 +33,7 @@ export const TaskTable = ({ tasks, updateTask, deleteTask }) => {
           onClick={() => {
             toggleStatus(x);
           }}
+          className="small-button"
         >
           Mark Complete
         </Button>{" "}
@@ -70,17 +72,18 @@ export const TaskTable = ({ tasks, updateTask, deleteTask }) => {
                   </Button>{" "}
                 </Stack> */}
                 <Container>
-                  <Row>
+                  <Col>
                     {statusButton(task)}
                     <Button
                       variant="danger"
                       onClick={(e) => {
                         deleteTask(task.id);
                       }}
+                      className="small-button"
                     >
                       Delete
                     </Button>{" "}
-                  </Row>
+                  </Col>
                 </Container>
               </td>
             </tr>
