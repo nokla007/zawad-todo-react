@@ -19,6 +19,7 @@ export const TaskModal = ({
         console.log(showModal);
         console.log("modal clos clicked");
         setModalShow(false);
+        reset();
       }}
       size="lg"
       // aria-labelledby="contained-modal-title-vcenter"

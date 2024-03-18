@@ -4,13 +4,18 @@ import { TaskModal, FormModal } from "./TaskModal";
 import Modal from "react-bootstrap/Modal";
 import { TaskForm } from "./TaskForm";
 import { FormButtons } from "./Buttons";
+import { uid } from "uid";
+import { MyTest } from "./mytest";
 
 export const AddTask = ({ submitTask, defaultTask }) => {
+  const newTask = () => {
+    return { ...defaultTask, id: uid() };
+  };
   const [modalShow, setModalShow] = useState(false); // state for modal
-  const [task, setTask] = useState(defaultTask); // state for input task
+  const [task, setTask] = useState(newTask()); // state for input task
 
   const reset = () => {
-    setTask(defaultTask);
+    setTask(newTask());
     console.log("reset");
   };
 
@@ -31,6 +36,7 @@ export const AddTask = ({ submitTask, defaultTask }) => {
           console.log("btn");
           setModalShow(true);
         }}
+        className="App"
       >
         Add TODO
       </Button>
@@ -42,21 +48,14 @@ export const AddTask = ({ submitTask, defaultTask }) => {
         // }}
         setModalShow={setModalShow}
         title="add task"
-      >
-        <TaskForm task={task} setTask={setTask} />
-      </TaskModal>
-      {/* <FormModal
-        title="add task"
-        showModal={modalShow}
-        onClose={() => setModalShow(false)}
         submit={submit}
         reset={reset}
       >
         <TaskForm task={task} setTask={setTask} />
-      </FormModal> */}
+      </TaskModal>
       <br />
-      <TaskForm task={task} setTask={setTask} />
-      <FormButtons submit={submit} reset={reset} />
+      {/* <TaskForm task={task} setTask={setTask} />
+      <FormButtons submit={submit} reset={reset} /> */}
       <br />
     </div>
   );

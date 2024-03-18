@@ -13,6 +13,7 @@ import Col from "react-bootstrap/Col";
 
 import { TaskTable } from "./taskView/TaskTable";
 import { Stack } from "react-bootstrap";
+import { TaskView } from "./taskView/TaskView";
 
 const mockTasks = [
   {
@@ -39,6 +40,24 @@ const mockTasks = [
     details: "task 3 details",
     priority: "Low",
     complete: false,
+    createdAt: "2024-03-12T05:19:29.533Z",
+    updatedAt: "2024-03-12T05:19:29.533Z",
+  },
+  {
+    id: uid(),
+    title: "task 4",
+    details: "task 3 details",
+    priority: "High",
+    complete: true,
+    createdAt: "2024-03-12T05:19:29.533Z",
+    updatedAt: "2024-03-12T05:19:29.533Z",
+  },
+  {
+    id: uid(),
+    title: "task 5",
+    details: "task 3 details",
+    priority: "Normal",
+    complete: true,
     createdAt: "2024-03-12T05:19:29.533Z",
     updatedAt: "2024-03-12T05:19:29.533Z",
   },
@@ -95,11 +114,12 @@ function App() {
     <div className="App page-border">
       <AddTask submitTask={addtask} defaultTask={defaultTask} />
       <br />
-      <TaskTable
+      {/* <TaskTable
         tasks={tasks}
         updateTask={updateTask}
         deleteTask={deleteTask}
-      />
+      /> */}
+      <TaskView tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
     </div>
   );
 }
