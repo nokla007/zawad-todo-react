@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import { TaskModal } from "./TaskModal";
+import { TaskModal, FormModal } from "./TaskModal";
 import Modal from "react-bootstrap/Modal";
 import { TaskForm } from "./TaskForm";
 import { FormButtons } from "./Buttons";
@@ -23,7 +23,7 @@ export const AddTask = ({ submitTask, defaultTask }) => {
   };
 
   return (
-    <>
+    <div>
       <Button
         variant="primary"
         size="lg"
@@ -36,18 +36,28 @@ export const AddTask = ({ submitTask, defaultTask }) => {
       </Button>
       <TaskModal
         showModal={modalShow}
-        onClose={() => {
-          setModalShow(false);
-          console.log("modal closed");
-        }}
-        title={"hello"}
+        // onClose={(e) => {
+        //   setModalShow(false);
+        //   console.log("modal closed");
+        // }}
+        setModalShow={setModalShow}
+        title="add task"
       >
-        <TaskForm />
+        <TaskForm task={task} setTask={setTask} />
       </TaskModal>
+      {/* <FormModal
+        title="add task"
+        showModal={modalShow}
+        onClose={() => setModalShow(false)}
+        submit={submit}
+        reset={reset}
+      >
+        <TaskForm task={task} setTask={setTask} />
+      </FormModal> */}
       <br />
       <TaskForm task={task} setTask={setTask} />
       <FormButtons submit={submit} reset={reset} />
       <br />
-    </>
+    </div>
   );
 };

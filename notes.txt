@@ -1,0 +1,20 @@
+https://www.youtube.com/watch?v=Rh3tobg7hEo
+
+when calling a setstate function, use lambda function in order to modify the current state.
+example:
+    const updateTask = (updatedTask) => {
+        setTasks((currentTasks)=>{
+            return currentTasks.map((x)=>{
+                if(x.id===updateTask.id){
+                x = updateTask;
+                }
+                return x;
+            })
+        })
+    };
+
+
+use key whenever rendering a list. try not to use index as key. better to use ID 
+
+
+

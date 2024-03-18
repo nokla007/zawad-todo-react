@@ -41,3 +41,9 @@
   width: 120px;
   height: 60px;
 }
+
+.page-border {
+  border: 0px solid #333;
+  padding: 10px;
+  /* Optional: Add padding for spacing */
+}

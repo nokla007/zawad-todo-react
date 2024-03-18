@@ -92,7 +92,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App page-border">
       <AddTask submitTask={addtask} defaultTask={defaultTask} />
       <br />
       <TaskTable
