@@ -28,7 +28,7 @@ export const AddTask = ({ submitTask, defaultTask }) => {
   };
 
   return (
-    <div>
+    <div className="App">
       <Button
         variant="primary"
         size="lg"
@@ -36,7 +36,6 @@ export const AddTask = ({ submitTask, defaultTask }) => {
           console.log("btn");
           setModalShow(true);
         }}
-        className="App"
       >
         Add TODO
       </Button>
