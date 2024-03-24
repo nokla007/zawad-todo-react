@@ -75,6 +75,7 @@ const defaultTask = {
 
 function App() {
   const [tasks, setTasks] = useState(mockTasks);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const addtask = (newTask) => {
     console.log("adding task ");
@@ -112,14 +113,24 @@ function App() {
 
   return (
     <div className="App page-border">
-      <AddTask submitTask={addtask} defaultTask={defaultTask} />
+      <AddTask
+        submitTask={addtask}
+        defaultTask={defaultTask}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
       <br />
       {/* <TaskTable
         tasks={tasks}
         updateTask={updateTask}
         deleteTask={deleteTask}
       /> */}
-      <TaskView tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+      <TaskView
+        tasks={tasks}
+        updateTask={updateTask}
+        deleteTask={deleteTask}
+        searchTerm={searchTerm}
+      />
     </div>
   );
 }
